@@ -8,13 +8,16 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 
-app.listen(5000, () => {
-  console.log("Server running on port 5000");
-});
+// app.listen(5000, () => {
+//   console.log("Server running on port 5000");
+// });
 
 app.get("/", (req, res) => {
   console.log("GET / visited");
   res.send("Hello!");
+});
+app.get("/about", (req, res) => {
+  res.send("This is about page!");
 });
 
 app.post("/", (req, res) => {
@@ -26,3 +29,4 @@ app.post("/", (req, res) => {
 
 
 module.exports = app;
+
